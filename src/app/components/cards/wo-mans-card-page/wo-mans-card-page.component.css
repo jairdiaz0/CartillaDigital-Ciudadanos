@@ -1,0 +1,29 @@
+table {
+  width: 100%;
+  margin-top: 20px;
+  border: 2px solid #ccc;
+  border-collapse: collapse;
+}
+th {
+  background-color: var(--color-cartilla-3);
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+td {
+  text-align: center;
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+.btn-info {
+  background-color: var(--color-cartilla-3);
+  border-color: var(--color-cartilla-3);
+  color: white;
+  font-weight: bold;
+  margin-right: 5px;
+}
+.fila2:hover {
+  background-color: yellow;
+}

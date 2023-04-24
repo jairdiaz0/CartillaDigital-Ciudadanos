@@ -1,0 +1,9 @@
+<div class="col-12">
+  <div class="row justify-content-center">
+    <div class="text-center" [ngClass]="container?container:['col-11', 'col-md-12']">
+      <div [ngClass]="alert?.getStatus()?.default?.class" role="alert" *ngIf="alert?.getStatus()?.flagShow">
+        {{alert?.getStatus()?.default?.title}}
+      </div>
+    </div>
+  </div>
+ </div>

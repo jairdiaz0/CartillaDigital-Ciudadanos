@@ -1,0 +1,82 @@
+<div class="row background d-flex justify-content-center">
+  <div class="col-12 col-md-9 col-lg-5">
+    <main class="card text-center mt-3 mb-3">
+      <!-- Encabezado de la tarjeta -->
+      <div class="card-header p-4 p-sm-3 p-md-4">
+        <p [ngClass]="title.class">{{title.text}}</p>
+      </div>
+      <div class="card-body background-card-body text-start p-4 p-md-5 rounded">
+        <form [formGroup]="formLogin" (ngSubmit)="sendSignIn()">
+          <!-- Título del formulario -->
+          <div class="row">
+            <p [ngClass]="form.title.class">{{form.title.text}}</p>
+          </div>
+          <!-- Input del e-mail -->
+          <div class="row">
+            <app-input-form [form]="formLogin" [component]="form.email"></app-input-form>
+            <div *ngIf="errors && errors.email"  class="h6 pb-2 mb-4 text-danger border-bottom border-danger text-center">
+              <small>{{ errors.email.msg }}</small>
+            </div>
+          </div>
+          <!-- Input del nombre -->
+          <div class="row">
+            <app-input-form [form]="formLogin" [component]="form.firstName"></app-input-form>
+            <div *ngIf="errors && errors.firstName"  class="h6 pb-2 mb-4 text-danger border-bottom border-danger text-center">
+              <small>{{ errors.firstName.msg }}</small>
+            </div>
+          </div>
+          <!-- Input del apellido paterno -->
+          <div class="row">
+            <app-input-form [form]="formLogin" [component]="form.surnamePaternal"></app-input-form>
+            <div *ngIf="errors && errors.lastName"  class="h6 pb-2 mb-4 text-danger border-bottom border-danger text-center">
+              <small>{{ errors.lastName.msg }}</small>
+            </div>
+          </div>
+          <!-- Input del apellido materno -->
+          <div class="row">
+            <app-input-form [form]="formLogin" [component]="form.surnameMaternal"></app-input-form>
+            <div *ngIf="errors && errors.secondLastName"  class="h6 pb-2 mb-4 text-danger border-bottom border-danger text-center">
+              <small>{{ errors.secondLastName.msg }}</small>
+            </div>
+          </div>
+          <!-- Input del password -->
+          <div class="row">
+            <app-input-form [form]="formLogin" [component]="form.password"></app-input-form>
+            <div *ngIf="errors && errors.password"  class="h6 pb-2 mb-4 text-danger border-bottom border-danger text-center">
+              <small>{{ errors.password.msg }}</small>
+            </div>
+          </div>
+          <!-- Input de la confirmación del password -->
+          <div class="row">
+            <app-input-form [form]="formLogin" [component]="form.passwordC"></app-input-form>
+          </div>
+
+          <!-- Mensaje de alerta -->
+          <div class="row">
+            <app-alert [alert]="alert"></app-alert>
+          </div>
+          <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+              <div class="text-center pt-1 mb-3 pb-1">
+                <button [disabled]="formLogin.invalid" [ngClass]="form.button.class">{{form.button.text}}
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="row g-0 justify-content-center">
+            <div class="col-12">
+              <div class="d-flex align-items-center justify-content-around text-center pb-4 mt-3 texto">
+                <div>
+                  <p [ngClass]="form.logIn.class">{{form.logIn.text}}</p>
+                  <a [routerLink]="form.logIn.button.router" [ngClass]="form.logIn.button.class">
+                    {{form.logIn.button.text}}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+</div>

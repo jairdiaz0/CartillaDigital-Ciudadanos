@@ -1,0 +1,55 @@
+<div class="row background justify-content-center align-items-center vh-100">
+  <div class="col-12 col-md-9 col-lg-5">
+    <!-- Formulario -->
+    <main class="card">
+      <div class="card-header p-4 p-sm-3 p-md-4 text-center">
+        <!-- Encabezado de la tarjeta -->
+        <p [ngClass]="title.class">{{title.text}}</p>
+      </div>
+      <div class="card-body background-card-body p-4 p-md-5 rounded">
+        <form [formGroup]="formLogin" (ngSubmit)="sendLogin()">
+          <!-- Titulo del formulario -->
+          <div class="row">
+            <p [ngClass]="form.title.class">{{form.title.text}}</p>
+          </div>
+          <!-- Input del e-mail -->
+          <div class="row">
+            <app-input-form [form]="formLogin" [component]="form.email"></app-input-form>
+            <div *ngIf="errors && errors.email"  class="h6 pb-2 mb-4 text-danger border-bottom border-danger text-center">
+              <small>{{ errors.email.msg }}</small>
+            </div>
+          </div>
+          <!-- Input del password -->
+          <div class="row">
+            <app-input-form [form]="formLogin" [component]="form.password"></app-input-form>
+            <div *ngIf="errors && errors.password"  class="h6 pb-2 mb-4 text-danger border-bottom border-danger text-center">
+              <small>{{ errors.password.msg }}</small>
+            </div>
+          </div>
+          <!-- Mensaje de alerta -->
+          <div class="row">
+            <app-alert [alert]="alert"></app-alert>
+          </div>
+          <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+              <div class="text-center pt-1 mb-3 pb-1">
+                <button [disabled]="formLogin.invalid" [ngClass]="form.button.class">{{form.button.text}}
+                </button>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="d-flex align-items-center justify-content-around text-center pb-4 mt-3 texto">
+                <div>
+                  <p [ngClass]="form.signIn.class">{{form.signIn.text}}</p>
+                  <a [routerLink]="form.signIn.button.router" [ngClass]="form.signIn.button.class">
+                    {{form.signIn.button.text}}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+</div>

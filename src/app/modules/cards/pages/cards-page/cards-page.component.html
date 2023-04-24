@@ -1,0 +1,54 @@
+<div class="row pt-5">
+  <div class="col-12">
+    <div *ngIf="userCard" class="card border-dark mb-3">
+      <div class="card-header">
+        <span class="h6 text-muted">Nombre:
+          <small class="name">{{ userCard.user.name.firstName}}
+            {{userCard.user.name.lastName }}
+            {{ userCard.user.name.secondLastName }}
+          </small>
+        </span>
+      </div>
+      <div class="card-footer justify-content-between d-flex">
+        <span class="h6 text-muted">Fecha De Nacimiento:
+          <small class="name">
+            {{ userCard.user.birthDay.day }} /
+            <span *ngIf="userCard.user.birthDay.month<10">0</span>{{userCard.user.birthDay.month }} /
+            {{userCard.user.birthDay.year }}
+          </small>
+        </span>
+        <span class="h6 text-muted">CURP:
+          <small class="name">
+            {{ userCard.user.curp }}
+          </small>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <select class="form-select text-center" name="tipo_cartilla" id="tipo_cartilla" (change)="onSelectChange($event)">
+      <option value="">Selecciona una opción</option>
+      <option *ngFor="let item of option" [value]="item.value">{{ item.text }}</option>
+    </select>
+  </div>
+</div>
+
+<div class="row">
+  <!-- <div class="col-12" *ngIf="selectValue == 'CART_NNY'"> -->
+    <app-childrens-card-page></app-childrens-card-page>
+  <!-- </div> -->
+  <div class="col-12" *ngIf="selectValue == 'CART_ADL'">
+    <app-teens-card-page></app-teens-card-page>
+  </div>
+  <div class="col-12" *ngIf="selectValue == 'CART_MUJ'">
+    <app-wo-mans-card-page></app-wo-mans-card-page>
+  </div>
+  <div class="col-12" *ngIf="selectValue == 'CART_HOM'">
+    <app-mans-card-page></app-mans-card-page>
+  </div>
+  <div class="col-12" *ngIf="selectValue == 'CART_AMY'">
+    <app-older-adult-card-page></app-older-adult-card-page>
+  </div>
+</div>

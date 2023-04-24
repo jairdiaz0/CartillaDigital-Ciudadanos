@@ -1,0 +1,15 @@
+.nav-link{
+  color: var(--color-1);
+}
+
+.nav-item{
+  cursor: pointer;
+}
+
+.nav-item:hover{
+  background-color: var(--color-8) !important;
+}
+
+p{
+  font-variant: small-caps;
+}

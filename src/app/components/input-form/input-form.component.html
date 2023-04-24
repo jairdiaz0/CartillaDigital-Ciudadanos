@@ -1,0 +1,8 @@
+<div [formGroup]="form" [ngClass]="component.class">
+  <div class="form-floating mb-3">
+    <input [id]="component.input.formControl" [ngClass]="component.input.class"
+      formControlName={{component.input.formControl}} [type]="component.input.type"
+      [placeholder]="component.label.text">
+    <label [for]="component.input.formControl" [ngClass]="component.label.class">{{component.label.text}}</label>
+  </div>
+</div>
