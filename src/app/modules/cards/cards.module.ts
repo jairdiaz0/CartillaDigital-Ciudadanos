@@ -8,6 +8,7 @@ import { ChildrensCardPageComponent } from '@components/cards/childrens-card-pag
 import { MansCardPageComponent } from '@components/cards/mans-card-page/mans-card-page.component';
 import { OlderAdultCardPageComponent } from '@components/cards/older-adult-card-page/older-adult-card-page.component';
 import { WoMansCardPageComponent } from '@components/cards/wo-mans-card-page/wo-mans-card-page/wo-mans-card-page.component';
+import { NavBarComponent } from '@components/nav-bar/nav-bar.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { WoMansCardPageComponent } from '@components/cards/wo-mans-card-page/wo-
   imports: [
     CommonModule,
     CardsRoutingModule,
+    NavBarComponent,
     ChildrensCardPageComponent,
     TeensCardPageComponent,
     MansCardPageComponent,
