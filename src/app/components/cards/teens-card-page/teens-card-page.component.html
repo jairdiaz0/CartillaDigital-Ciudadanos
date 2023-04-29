@@ -310,8 +310,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body text-center">
-        <ngx-qrcode [value]="modalQR">
-        </ngx-qrcode>
+        <qrcode [qrdata]="modalQR" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#qrModal" data-bs-toggle="modal" data-bs-target="#qrModal"

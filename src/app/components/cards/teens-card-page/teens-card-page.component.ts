@@ -3,8 +3,8 @@ import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalComponent } from '@components/modal/modal.component';
 import { CookieService } from 'ngx-cookie-service';
-import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { environment } from 'src/environments/environment';
+import { QRCodeModule } from 'angularx-qrcode';
 
 @Component({
   standalone: true,
@@ -14,7 +14,7 @@ import { environment } from 'src/environments/environment';
   imports:[
     CommonModule,
     ModalComponent,
-    NgxQRCodeModule
+    QRCodeModule
   ]
 })
 export class TeensCardPageComponent {

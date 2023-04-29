@@ -3,15 +3,15 @@ import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalComponent } from '@components/modal/modal.component';
 import { CookieService } from 'ngx-cookie-service';
-import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { environment } from 'src/environments/environment';
+import { QRCodeModule } from 'angularx-qrcode';
 
 @Component({
   standalone: true,
   selector: 'app-childrens-card-page',
   templateUrl: './childrens-card-page.component.html',
   styleUrls: ['./childrens-card-page.component.css'],
-  imports: [CommonModule, ModalComponent, NgxQRCodeModule],
+  imports: [CommonModule, ModalComponent, QRCodeModule],
 })
 export class ChildrensCardPageComponent {
   @Input() userCard?: any;

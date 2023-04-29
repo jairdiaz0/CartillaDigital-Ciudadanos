@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalComponent } from '@components/modal/modal.component';
+import { QRCodeModule } from 'angularx-qrcode';
 import { CookieService } from 'ngx-cookie-service';
-import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment';
   selector: 'app-mans-card-page',
   templateUrl: './mans-card-page.component.html',
   styleUrls: ['./mans-card-page.component.css'],
-  imports: [CommonModule, ModalComponent, NgxQRCodeModule],
+  imports: [CommonModule, ModalComponent, QRCodeModule],
 })
 export class MansCardPageComponent {
   @Input() userCard?: any;
