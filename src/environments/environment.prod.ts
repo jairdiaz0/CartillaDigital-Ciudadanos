@@ -1,5 +1,4 @@
 export const environment = {
-  production: true,
-  url: 'http://192.168.1.197:3000',
+  url: 'https://cvd-back-end.vercel.app',
   tokenName: 'token_session'
 };

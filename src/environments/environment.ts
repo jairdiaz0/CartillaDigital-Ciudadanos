@@ -3,9 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  url: 'http://localhost:3000',
-  // url: 'http://192.168.1.197:3000',
+  url: 'https://cvd-back-end.vercel.app',
   tokenName: 'token_session'
 };
 
