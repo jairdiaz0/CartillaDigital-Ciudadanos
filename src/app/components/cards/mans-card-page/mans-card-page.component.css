@@ -5,7 +5,7 @@ table {
   border-collapse: collapse;
 }
 th {
-  background-color: var(--color-cartilla-1);
+  background-color: var(--color-cartilla-4);
   color: white;
   font-weight: bold;
   text-align: center;
@@ -16,10 +16,11 @@ td {
   text-align: center;
   padding: 8px;
   border: 1px solid #ccc;
+  cursor: pointer;
 }
 .btn-info {
-  background-color: var(--color-cartilla-1);
-  border-color: var(--color-cartilla-1);
+  background-color: var(--color-cartilla-4);
+  border-color: var(--color-cartilla-4);
   color: white;
   font-weight: bold;
   margin-right: 5px;

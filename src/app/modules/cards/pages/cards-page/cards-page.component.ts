@@ -92,7 +92,7 @@ export class CardsPageComponent {
         }
       });
     }else{
-      // this.router.navigate(['/', 'home', 'user']);
+      this.router.navigate(['/', 'home', 'user']);
     }
   }
 

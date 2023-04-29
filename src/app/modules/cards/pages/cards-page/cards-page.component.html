@@ -36,19 +36,19 @@
 </div>
 
 <div class="row">
-  <!-- <div class="col-12" *ngIf="selectValue == 'CART_NNY'"> -->
-    <app-childrens-card-page></app-childrens-card-page>
-  <!-- </div> -->
+  <div class="col-12" *ngIf="selectValue == 'CART_NNY'">
+    <app-childrens-card-page [userCard]="userCard"></app-childrens-card-page>
+  </div>
   <div class="col-12" *ngIf="selectValue == 'CART_ADL'">
-    <app-teens-card-page></app-teens-card-page>
+    <app-teens-card-page [userCard]="userCard"></app-teens-card-page>
   </div>
   <div class="col-12" *ngIf="selectValue == 'CART_MUJ'">
-    <app-wo-mans-card-page></app-wo-mans-card-page>
+    <app-wo-mans-card-page [userCard]="userCard"></app-wo-mans-card-page>
   </div>
   <div class="col-12" *ngIf="selectValue == 'CART_HOM'">
-    <app-mans-card-page></app-mans-card-page>
+    <app-mans-card-page [userCard]="userCard"></app-mans-card-page>
   </div>
   <div class="col-12" *ngIf="selectValue == 'CART_AMY'">
-    <app-older-adult-card-page></app-older-adult-card-page>
+    <app-older-adult-card-page [userCard]="userCard"></app-older-adult-card-page>
   </div>
 </div>

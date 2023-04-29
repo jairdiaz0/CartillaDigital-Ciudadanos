@@ -4,63 +4,204 @@
     <thead>
       <tr>
         <th class="col"> Vacuna </th>
-        <th class="col"> Enfermedades que previene </th>
-        <th class="col" colspan="2"> Dosis </th>
-        <th class="col"> Edad de vacunación y frecuencia </th>
+        <th class="col"> Dosis </th>
         <th class="col"> Información</th>
       </tr>
     </thead>
     <tbody>
-      <tr class="fila">
-        <td class="col" class="vacuna" rowspan="3">SR</td>
-        <td class="col" class="enfermedades" rowspan="3">Sarampión y Rubéola</td>
-        <td class="col" class="dosis" rowspan="2">Sin antecedente vacunal</td>
-        <td class="col" class="dosis"> Primera</td>
-        <td class="col" class="edad_oportuna">En el primer contacto</td>
-        <td class="col"><button class="btn btn-info" id="btnSR1">Ver información</button></td>
+      <tr>
+        <td rowspan="3" class="col d-table-cell" data-bs-toggle="modal" data-bs-target="#informacion"
+          (click)="info('SR', 'Sarampión y Rubéola')">
+          SR
+        </td>
+        <td class="col d-table-cell" data-bs-toggle="modal" data-bs-target="#dosis"
+          (click)="dosis('Dosis SR primera', 'Edad oprtuna:En el primer contacto')">
+          Sin antecedente vacunal - Primera
+        </td>
+        <td class="col text-danger" *ngIf="!CART_HOM.SR_primera">
+          <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#qrModal" (click)="applyVaccine('SR_primera')">
+            Aplicar
+          </button>
+        </td>
+        <td class="col text-danger" *ngIf="CART_HOM.SR_primera">
+          <button class="btn btn-outline-success " data-bs-toggle="modal" data-bs-target="#seleccion"
+            (click)="seleccionar(CART_HOM.SR_primera)">
+            Ver información
+          </button>
+        </td>
       </tr>
-      <tr class="fila">
-        <td class="col" class="dosis"> Segunda</td>
-        <td class="col" class="edad_oportuna">4 semanas después de la primera</td>
-        <td class="col"><button class="btn btn-info" id="btnSR2">Ver información</button></td>
+      <tr>
+        <td class="col d-table-cell" data-bs-toggle="modal" data-bs-target="#dosis"
+          (click)="dosis('Dosis SR Segunda', 'Edad oprtuna:4 semanas después de la primera')">
+          Sin antecedente vacunal - Segunda
+        </td>
+        <td class="col text-danger" *ngIf="!CART_HOM.SR_segunda">
+          <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#qrModal" (click)="applyVaccine('SR_segunda')">
+            Aplicar
+          </button>
+        </td>
+        <td class="col text-danger" *ngIf="CART_HOM.SR_segunda">
+          <button class="btn btn-outline-success " data-bs-toggle="modal" data-bs-target="#seleccion"
+            (click)="seleccionar(CART_HOM.SR_segunda)">
+            Ver información
+          </button>
+        </td>
       </tr>
-      <tr class="fila">
-        <td class="col" class="dosis">Con esquema incompleto</td>
-        <td class="col" class="dosis">Dosis única</td>
-        <td class="col" class="edad_oportuna">En el primer contacto</td>
-        <td class="col"><button class="btn btn-info" id="btnSREsquemaIncompleto">Ver información</button></td>
+      <tr>
+        <td class="col d-table-cell" data-bs-toggle="modal" data-bs-target="#dosis"
+          (click)="dosis('Dosis SR Dosis única', 'Edad oprtuna:En el primer contacto')">
+          Con esquema incompleto - Dosis única
+        </td>
+        <td class="col text-danger" *ngIf="!CART_HOM.SR_unica">
+          <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#qrModal" (click)="applyVaccine('SR_unica')">
+            Aplicar
+          </button>
+        </td>
+        <td class="col text-danger" *ngIf="CART_HOM.SR_unica">
+          <button class="btn btn-outline-success " data-bs-toggle="modal" data-bs-target="#seleccion"
+            (click)="seleccionar(CART_HOM.SR_unica)">
+            Ver información
+          </button>
+        </td>
       </tr>
-      <tr class="fila">
-        <td class="col" class="vacuna" rowspan="4">Td</td>
-        <td class="col" class="enfermedades" rowspan="4">Tetanos y Difteria</td>
-        <td class="col" class="dosis"> Con esquema completo</td>
-        <td class="col" class="dosis">Refuerzo</td>
-        <td class="col" class="edad_oportuna">Cada 10 años</td>
-        <td class="col"><button class="btn btn-info" id="btnTdRefuerzo">Ver información</button></td>
+      <tr>
+        <td rowspan="4" class="col d-table-cell" data-bs-toggle="modal" data-bs-target="#informacion"
+          (click)="info('Td', 'Tetanos y Difteria')">
+          Td
+        </td>
+        <td class="col d-table-cell" data-bs-toggle="modal" data-bs-target="#dosis"
+          (click)="dosis('Dosis Td Refuerzo', 'Edad oprtuna:Cada 10 años')">
+          Con esquema completo - Refuerzo
+        </td>
+        <td class="col text-danger" *ngIf="!CART_HOM.Td_refuerzo">
+          <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#qrModal" (click)="applyVaccine('Td_refuerzo')">
+            Aplicar
+          </button>
+        </td>
+        <td class="col text-danger" *ngIf="CART_HOM.Td_refuerzo">
+          <button class="btn btn-outline-success " data-bs-toggle="modal" data-bs-target="#seleccion"
+            (click)="seleccionar(CART_HOM.Td_refuerzo)">
+            Ver información
+          </button>
+        </td>
       </tr>
-      <tr class="fila">
-        <td class="col" class="dosis" rowspan="3"> Con esquema incompleto o no documentado </td>
-        <td class="col" class="dosis">Primera</td>
-        <td class="col" class="edad_oportuna">Dosis inicial</td>
-        <td class="col"><button class="btn btn-info" id="btnTd1">Ver información</button></td>
+      <tr>
+        <td class="col d-table-cell" data-bs-toggle="modal" data-bs-target="#dosis"
+          (click)="dosis('Dosis Td Primera', 'Edad oprtuna:Dosis inicial')">
+          Con esquema incompleto o no documentado - Primera
+        </td>
+        <td class="col text-danger" *ngIf="!CART_HOM.Td_primera">
+          <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#qrModal" (click)="applyVaccine('Td_primera')">
+            Aplicar
+          </button>
+        </td>
+        <td class="col text-danger" *ngIf="CART_HOM.Td_primera">
+          <button class="btn btn-outline-success " data-bs-toggle="modal" data-bs-target="#seleccion"
+            (click)="seleccionar(CART_HOM.Td_primera)">
+            Ver información
+          </button>
+        </td>
       </tr>
-      <tr class="fila">
-        <td class="col" class="dosis">Segunda</td>
-        <td class="col" class="edad_oportuna">1 mes después de la primera dosis</td>
-        <td class="col"><button class="btn btn-info" id="btnTd2">Ver información</button></td>
+      <tr>
+        <td class="col d-table-cell" data-bs-toggle="modal" data-bs-target="#dosis"
+          (click)="dosis('Dosis Td Segunda', 'Edad oprtuna:1 mes después de la primera dosis')">
+          Con esquema incompleto o no documentado - Segunda
+        </td>
+        <td class="col text-danger" *ngIf="!CART_HOM.Td_segunda">
+          <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#qrModal" (click)="applyVaccine('Td_segunda')">
+            Aplicar
+          </button>
+        </td>
+        <td class="col text-danger" *ngIf="CART_HOM.Td_segunda">
+          <button class="btn btn-outline-success " data-bs-toggle="modal" data-bs-target="#seleccion"
+            (click)="seleccionar(CART_HOM.Td_segunda)">
+            Ver información
+          </button>
+        </td>
       </tr>
-      <tr class="fila">
-        <td class="col" class="dosis"> Tercera </td>
-        <td class="col" class="edad_oportuna">12 meses posteriores a la primera dosis</td>
-        <td class="col"><button class="btn btn-info" id="btn3">Ver información</button></td>
+      <tr>
+        <td class="col d-table-cell" data-bs-toggle="modal" data-bs-target="#dosis"
+          (click)="dosis('Dosis Td Tercera', 'Edad oprtuna:12 meses posteriores a la primera dosis')">
+          Con esquema incompleto o no documentado - Tercera
+        </td>
+        <td class="col text-danger" *ngIf="!CART_HOM.Td_tercera">
+          <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#qrModal" (click)="applyVaccine('Td_tercera')">
+            Aplicar
+          </button>
+        </td>
+        <td class="col text-danger" *ngIf="CART_HOM.Td_tercera">
+          <button class="btn btn-outline-success " data-bs-toggle="modal" data-bs-target="#seleccion"
+            (click)="seleccionar(CART_HOM.Td_tercera)">
+            Ver información
+          </button>
+        </td>
       </tr>
-      <tr class="fila">
-        <td class="col" class="vacuna">Influeza estacional</td>
-        <td class="col" class="enfermedades">Influeza</td>
-        <td class="col" class="dosis" colspan="2">Personas con factores de riesgo</td>
-        <td class="col" class="edad_oportuna">Anual</td>
-        <td class="col"><button class="btn btn-info" id="btnInflueza">Ver información</button></td>
+      <tr>
+        <td class="col d-table-cell" data-bs-toggle="modal" data-bs-target="#informacion"
+          (click)="info('Influeza estacional', 'Influeza')">
+          Influeza estacional
+        </td>
+        <td class="col d-table-cell" data-bs-toggle="modal" data-bs-target="#dosis"
+          (click)="dosis('Dosis Influeza estacional Persona con factor de riesgo', 'Anual')">
+          Personas con factores de riesgo
+        </td>
+        <td class="col text-danger" *ngIf="!CART_HOM.Influenza_factor_de_riesgo">
+          <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#qrModal" (click)="applyVaccine('Influenza_factor_de_riesgo')">
+            Aplicar
+          </button>
+        </td>
+        <td class="col text-danger" *ngIf="CART_HOM.Influenza_factor_de_riesgo">
+          <button class="btn btn-outline-success " data-bs-toggle="modal" data-bs-target="#seleccion"
+            (click)="seleccionar(CART_HOM.Influenza_factor_de_riesgo)">
+            Ver información
+          </button>
+        </td>
       </tr>
     </tbody>
   </table>
+</div>
+
+<app-modal *ngIf="modalVaccineInfo" [id]="'informacion'" [modal]="modalVaccineInfo" />
+<app-modal *ngIf="modalVaccineDosis" [id]="'dosis'" [modal]="modalVaccineDosis" />
+
+
+<div class="modal fade" id="seleccion" tabindex="-1" aria-labelledby="seleccionLabel" aria-hidden="true"
+  *ngIf="vaccineSelected">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-dark">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 " id="seleccionLabel"> Vacuna: {{vaccineSelected.name}}</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-dark text-center">
+        <p>Fecha: {{vaccineSelected.fecha}}</p>
+        <p>Lote: {{vaccineSelected.lote}}</p>
+        <p>Sede: {{vaccineSelected.sede}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="qrModal" tabindex="-1" aria-labelledby="qrModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="qrModalLabel">QR para aplicar Dosis</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <ngx-qrcode [value]="modalQR">
+        </ngx-qrcode>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#qrModal" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal"
+          (click)="updateUserCard()">Verificar Aplicación</button>
+      </div>
+    </div>
+  </div>
 </div>

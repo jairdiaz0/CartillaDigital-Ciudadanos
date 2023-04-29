@@ -4,101 +4,321 @@
     <thead>
       <tr>
         <th class="col"> Vacuna </th>
-        <th class="col"> Enfermedades que previene </th>
-        <th class="col" colspan="2"> Dosis </th>
-        <th class="col"> Edad de vacunación y frecuencia </th>
+        <th class="col"> Dosis </th>
         <th class="col"> Información</th>
       </tr>
     </thead>
     <tbody>
-      <tr class="fila">
-        <td class="col" class="vacuna" rowspan="2">Hepatitis B (Los que no se han vacunado)</td>
-        <td class="col" class="enfermedades" rowspan="2">Hepatitis B</td>
-        <td class="col" class="dosis" colspan="2">Primera</td>
-        <td class="col" class="edad_oportuna">A partir de los 11 años</td>
-        <td class="col"><button class="btn btn-info" id="btnHepatitisB">Ver información</button></td>
-      </tr>
-      <tr class="fila">
-        <td class="col" class="dosis" colspan="2"> Segunda </td>
-        <td class="col" class="edad_oportuna">4 semanas posteriores a la primera </td>
-        <td class="col"><button class="btn btn-info" id="btnHepatitisB2">Ver información</button></td>
-      </tr>
-      <tr class="fila">
-        <td class="col" class="vacuna" rowspan="4">Td</td>
-        <td class="col" class="enfermedades" rowspan="4">Tetanos y Difteria</td>
-        <td class="col" class="dosis"> Con esquema</td>
-        <td class="col" class="dosis">Refuerzo</td>
-        <td class="col" class="edad_oportuna">11 años de edad_oportuna</td>
-        <td class="col"><button class="btn btn-info" id="btnTdRefuerzo">Ver información</button></td>
-      </tr>
-      <tr class="fila">
-        <td class="col" class="dosis" rowspan="3"> Con esquema incompleto </td>
-        <td class="col" class="dosis">Primera</td>
-        <td class="col" class="edad_oportuna">Dosis inicial</td>
-        <td class="col"><button class="btn btn-info" id="btnTdRefuerzo1">Ver información</button></td>
-      </tr>
-      <tr class="fila">
-        <td class="col" class="dosis">Segunda</td>
-        <td class="col" class="edad_oportuna">1 mes después de la primera dosis</td>
-        <td class="col"><button class="btn btn-info" id="btnTdRefuerzo2">Ver información</button></td>
-      </tr>
-      <tr class="fila">
-        <td class="col" class="dosis"> Tercera </td>
-        <td class="col" class="edad_oportuna">12 meses posteriores a la primera dosis</td>
-        <td class="col"><button class="btn btn-info" id="btnTdRefuerzo3">Ver información</button></td>
-      </tr>
-      <tr class="fila">
-        <td class="col" class="vacuna">Tdpa</td>
-        <td class="col" class="enfermedades">Tétanos, Difteria y Tosferina</td>
-        <td class="col" class="dosis" colspan="2">Única</td>
-        <td class="col" class="edad_oportuna">A partir de la semana 20 del embarazo</td>
-        <td class="col"><button class="btn btn-info" id="btnTdpa">Ver información</button></td>
-      </tr>
-      <tr class="fila">
-        <td class="col" class="vacuna">Influenza estacional</td>
-        <td class="col" class="enfermedades">Influenza</td>
-        <td class="col" class="dosis" colspan="2">Única</td>
-        <td class="col" class="edad_oportuna">Cualquier trimestre del embarazo</td>
-        <td class="col"><button class="btn btn-info" id="btnInfluezaEstacional">Ver información</button></td>
-      </tr>
-      <tr class="fila">
-        <td class="col" class="vacuna" rowspan="3">SR (los que no han sido vacunados o no tienen esquema completo)</td>
-        <td class="col" class="enfermedades" rowspan="3">Sarampión y Rubéola</td>
-        <td class="col" class="dosis" rowspan="2">Sin antecedente vacunal</td>
-        <td class="col" class="dosis"> Primera</td>
-        <td class="col" class="edad_oportuna">En el primer contacto</td>
-        <td class="col"><button class="btn btn-info" id="btnSR">Ver información</button></td>
+      <tr>
+        <td rowspan="2" class="col d-table-cell" data-bs-toggle="modal" data-bs-target="#informacion"
+          (click)="info('Hepatitis B (Los que no se han vacunado)', 'Hepatitis B')">
+          Hepatitis B (Los que no se han vacunado)
+        </td>
+        <td class="col d-table-cell" data-bs-toggle="modal" data-bs-target="#dosis"
+          (click)="dosis('Dosis Hepatistis B primera', 'Edad oprtuna:A partir de los 11 años')">
+          Primera
+        </td>
+        <td class="col text-danger" *ngIf="!CART_ADL.HepatitisB_Primera">
+          <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#qrModal" (click)="applyVaccine('HepatitisB_Primera')">
+            Aplicar
+          </button>
+        </td>
+        <td class="col text-danger" *ngIf="CART_ADL.HepatitisB_Primera">
+          <button class="btn btn-outline-success " data-bs-toggle="modal" data-bs-target="#seleccion"
+            (click)="seleccionar(CART_ADL.HepatitisB_Primera)">
+            Ver información
+          </button>
+        </td>
       </tr>
       <tr>
-        <td class="col" class="dosis"> Segunda</td>
-        <td class="col" class="edad_oportuna">4 semanas después de la primera</td>
-        <td class="col"><button class="btn btn-info" id="btnSR2">Ver información</button></td>
+        <td class="col d-table-cell" data-bs-toggle="modal" data-bs-target="#dosis"
+          (click)="dosis('Dosis Hepatistis B segunda', 'Edad oprtuna:4 semanas posteriores a la primera')">
+          Segunda
+        </td>
+        <td class="col text-danger" *ngIf="!CART_ADL.HepatitisB_Segunda">
+          <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#qrModal" (click)="applyVaccine('HepatitisB_Segunda')">
+            Aplicar
+          </button>
+        </td>
+        <td class="col text-danger" *ngIf="CART_ADL.HepatitisB_Segunda">
+          <button class="btn btn-outline-success " data-bs-toggle="modal" data-bs-target="#seleccion"
+            (click)="seleccionar(CART_ADL.HepatitisB_Segunda)">
+            Ver información
+          </button>
+        </td>
       </tr>
       <tr>
-        <td class="col" class="dosis">Con esquema incompleto</td>
-        <td class="col" class="dosis">Dosis única</td>
-        <td class="col" class="edad_oportuna">En el primer contacto</td>
-        <td class="col"><button class="btn btn-info" id="btnSREsquemaIncompleto">Ver información</button></td>
+        <td rowspan="4" class="col d-table-cell" data-bs-toggle="modal" data-bs-target="#informacion"
+          (click)="info('Td', 'Tetanos y Difteria')">
+          Td
+        </td>
+        <td class="col d-table-cell" data-bs-toggle="modal" data-bs-target="#dosis"
+          (click)="dosis('Dosis Td Con esquema-Refuerzo', 'Edad oprtuna:11 años de edad')">
+          Con esquema-Refuerzo
+        </td>
+        <td class="col text-danger" *ngIf="!CART_ADL.TdRefuerzo">
+          <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#qrModal" (click)="applyVaccine('TdRefuerzo')">
+            Aplicar
+          </button>
+        </td>
+        <td class="col text-danger" *ngIf="CART_ADL.TdRefuerzo">
+          <button class="btn btn-outline-success " data-bs-toggle="modal" data-bs-target="#seleccion"
+            (click)="seleccionar(CART_ADL.TdRefuerzo)">
+            Ver información
+          </button>
+        </td>
       </tr>
-      <tr class="fila">
-        <td class="col" class="vacuna" rowspan="3">VPH</td>
-        <td class="col" class="enfermedades" rowspan="3">Infección or el Virus del Papiloma Humano y Cáncer
-          Cervico-Uterino</td>
-        <td class="col" class="dosis" colspan="2">Primera</td>
-        <td class="col" class="edad_oportuna">Mujeres en el quinto grado de primaria y de 11 años de edad no
-          escolzarizadas</td>
-        <td class="col"><button class="btn btn-info" id="btnVPH1">Ver información</button></td>
+      <tr>
+        <td class="col d-table-cell" data-bs-toggle="modal" data-bs-target="#dosis"
+          (click)="dosis('Dosis Td Con esquema incompleto - Primera', 'Edad oprtuna: dosis inicial')">
+          Con esquema incompleto-Primera
+        </td>
+        <td class="col text-danger" *ngIf="!CART_ADL.TdPrimera">
+          <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#qrModal" (click)="applyVaccine('TdPrimera')">
+            Aplicar
+          </button>
+        </td>
+        <td class="col text-danger" *ngIf="CART_ADL.TdPrimera">
+          <button class="btn btn-outline-success " data-bs-toggle="modal" data-bs-target="#seleccion"
+            (click)="seleccionar(CART_ADL.TdPrimera)">
+            Ver información
+          </button>
+        </td>
       </tr>
-      <tr class="fila">
-        <td class="col" class="dosis" colspan="2"> Segunda </td>
-        <td class="col" class="edad_oportuna">6 meses después de la primera dosis </td>
-        <td class="col"><button class="btn btn-info" id="btnVPH2">Ver información</button></td>
+      <tr>
+        <td class="col d-table-cell" data-bs-toggle="modal" data-bs-target="#dosis"
+          (click)="dosis('Dosis Td Con esquema incompleto - Segunda', 'Edad oprtuna:1 mes después de la primera dosis')">
+          Con esquema incompleto-Segunda
+        </td>
+        <td class="col text-danger" *ngIf="!CART_ADL.TdSegunda">
+          <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#qrModal" (click)="applyVaccine('TdSegunda')">
+            Aplicar
+          </button>
+        </td>
+        <td class="col text-danger" *ngIf="CART_ADL.TdSegunda">
+          <button class="btn btn-outline-success " data-bs-toggle="modal" data-bs-target="#seleccion"
+            (click)="seleccionar(CART_ADL.TdSegunda)">
+            Ver información
+          </button>
+        </td>
       </tr>
-      <tr class="fila">
-        <td class="col" class="dosis" colspan="2"> Tercera </td>
-        <td class="col" class="edad_oportuna">60 meses después de la primera dosis</td>
-        <td class="col"><button class="btn btn-info" id="btnVPH3">Ver información</button></td>
+      <tr>
+        <td class="col d-table-cell" data-bs-toggle="modal" data-bs-target="#dosis"
+          (click)="dosis('Dosis Td Con esquema incompleto - Tercera', 'Edad oprtuna:12 meses posteriores a la primera dosis')">
+          Con esquema incompleto-Tercera
+        </td>
+        <td class="col text-danger" *ngIf="!CART_ADL.TdTercera">
+          <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#qrModal" (click)="applyVaccine('TdTercera')">
+            Aplicar
+          </button>
+        </td>
+        <td class="col text-danger" *ngIf="CART_ADL.TdTercera">
+          <button class="btn btn-outline-success " data-bs-toggle="modal" data-bs-target="#seleccion"
+            (click)="seleccionar(CART_ADL.TdTercera)">
+            Ver información
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td class="col d-table-cell" data-bs-toggle="modal" data-bs-target="#informacion"
+          (click)="info('Tdpa', 'Tétanos, Difteria y Tosferina')">
+          Tdpa
+        </td>
+        <td class="col d-table-cell" data-bs-toggle="modal" data-bs-target="#dosis"
+          (click)="dosis('Dosis Tdpa Única', 'Edad oprtuna:A partir de la semana 20 del embarazo')">
+          Única
+        </td>
+        <td class="col text-danger" *ngIf="!CART_ADL.Tdpa">
+          <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#qrModal" (click)="applyVaccine('Tdpa')">
+            Aplicar
+          </button>
+        </td>
+        <td class="col text-danger" *ngIf="CART_ADL.Tdpa">
+          <button class="btn btn-outline-success " data-bs-toggle="modal" data-bs-target="#seleccion"
+            (click)="seleccionar(CART_ADL.Tdpa)">
+            Ver información
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td class="col d-table-cell" data-bs-toggle="modal" data-bs-target="#informacion"
+          (click)="info('Influenza estacional', 'Influenza')">
+          Influenza estacional
+        </td>
+        <td class="col d-table-cell" data-bs-toggle="modal" data-bs-target="#dosis"
+          (click)="dosis('Dosis Influenza estacional Única', 'Edad oprtuna:Cualquier trimestre del embarazo')">
+          Única
+        </td>
+        <td class="col text-danger" *ngIf="!CART_ADL.Influenza">
+          <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#qrModal" (click)="applyVaccine('Influenza')">
+            Aplicar
+          </button>
+        </td>
+        <td class="col text-danger" *ngIf="CART_ADL.Influenza">
+          <button class="btn btn-outline-success " data-bs-toggle="modal" data-bs-target="#seleccion"
+            (click)="seleccionar(CART_ADL.Influenza)">
+            Ver información
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td rowspan="3" class="col d-table-cell" data-bs-toggle="modal" data-bs-target="#informacion"
+          (click)="info('SR', 'Sarampión y Rubeola')">
+          SR (los que no han sido vacunados o no tienen esquema completo)
+        </td>
+        <td class="col d-table-cell" data-bs-toggle="modal" data-bs-target="#dosis"
+          (click)="dosis('Dosis SR Primera', 'Edad oprtuna:En el primer contacto')">
+          Sin antecedente vacunal - Primera
+        </td>
+        <td class="col text-danger" *ngIf="!CART_ADL.SR_primera">
+          <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#qrModal" (click)="applyVaccine('SR_primera')">
+            Aplicar
+          </button>
+        </td>
+        <td class="col text-danger" *ngIf="CART_ADL.SR_primera">
+          <button class="btn btn-outline-success " data-bs-toggle="modal" data-bs-target="#seleccion"
+            (click)="seleccionar(CART_ADL.SR_primera)">
+            Ver información
+          </button>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="col d-table-cell" data-bs-toggle="modal" data-bs-target="#dosis"
+          (click)="dosis('Dosis SR Segunda', 'Edad oprtuna:4 semanas después de la primera')">
+          Sin antecedente vacunal - Segunda
+        </td>
+        <td class="col text-danger" *ngIf="!CART_ADL.SR_segunda">
+          <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#qrModal" (click)="applyVaccine('SR_segunda')">
+            Aplicar
+          </button>
+        </td>
+        <td class="col text-danger" *ngIf="CART_ADL.SR_segunda">
+          <button class="btn btn-outline-success " data-bs-toggle="modal" data-bs-target="#seleccion"
+            (click)="seleccionar(CART_ADL.SR_segunda)">
+            Ver información
+          </button>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="col d-table-cell" data-bs-toggle="modal" data-bs-target="#dosis"
+          (click)="dosis('Dosis SR Dosis única', 'Edad oprtuna:En el primer contacto')">
+          Con esquema incompleto - Dosis única
+        </td>
+        <td class="col text-danger" *ngIf="!CART_ADL.SR_DosisUnica">
+          <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#qrModal" (click)="applyVaccine('SR_DosisUnica')">
+            Aplicar
+          </button>
+        </td>
+        <td class="col text-danger" *ngIf="CART_ADL.SR_DosisUnica">
+          <button class="btn btn-outline-success " data-bs-toggle="modal" data-bs-target="#seleccion"
+            (click)="seleccionar(CART_ADL.SR_DosisUnica)">
+            Ver información
+          </button>
+        </td>
+      </tr>
+
+      <tr>
+        <td rowspan="3" class="col d-table-cell" data-bs-toggle="modal" data-bs-target="#informacion"
+          (click)="info('VPH', 'Infección por el Virus del Papiloma Humano y Cáncer Cervico-Uterino')">
+          VPH
+        </td>
+        <td class="col d-table-cell" data-bs-toggle="modal" data-bs-target="#dosis"
+          (click)="dosis('Dosis VPH Primera', 'Edad oprtuna:Mujeres en el quinto grado de primaria y de 11 años de edad noescolzarizadas')">
+          Primera
+        </td>
+        <td class="col text-danger" *ngIf="!CART_ADL.VPH_primera">
+          <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#qrModal" (click)="applyVaccine('VPH_primera')">
+            Aplicar
+          </button>
+        </td>
+        <td class="col text-danger" *ngIf="CART_ADL.VPH_primera">
+          <button class="btn btn-outline-success " data-bs-toggle="modal" data-bs-target="#seleccion"
+            (click)="seleccionar(CART_ADL.VPH_primera)">
+            Ver información
+          </button>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="col d-table-cell" data-bs-toggle="modal" data-bs-target="#dosis"
+          (click)="dosis('Dosis VPH Segunda', 'Edad oprtuna:6 meses después de la primera dosis')">
+          Segunda
+        </td>
+        <td class="col text-danger" *ngIf="!CART_ADL.VPH_segunda">
+          <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#qrModal" (click)="applyVaccine('VPH_segunda')">
+            Aplicar
+          </button>
+        </td>
+        <td class="col text-danger" *ngIf="CART_ADL.VPH_segunda">
+          <button class="btn btn-outline-success " data-bs-toggle="modal" data-bs-target="#seleccion"
+            (click)="seleccionar(CART_ADL.VPH_segunda)">
+            Ver información
+          </button>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="col d-table-cell" data-bs-toggle="modal" data-bs-target="#dosis"
+          (click)="dosis('Dosis VPH Tercera', 'Edad oprtuna:60 meses después de la primera dosis')">
+          Tercera
+        </td>
+        <td class="col text-danger" *ngIf="!CART_ADL.VPH_terceras">
+          <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#qrModal" (click)="applyVaccine('VPH_terceras')">
+            Aplicar
+          </button>
+        </td>
+        <td class="col text-danger" *ngIf="CART_ADL.VPH_terceras">
+          <button class="btn btn-outline-success " data-bs-toggle="modal" data-bs-target="#seleccion"
+            (click)="seleccionar(CART_ADL.VPH_terceras)">
+            Ver información
+          </button>
+        </td>
       </tr>
     </tbody>
   </table>
+</div>
+<app-modal *ngIf="modalVaccineInfo" [id]="'informacion'" [modal]="modalVaccineInfo" />
+<app-modal *ngIf="modalVaccineDosis" [id]="'dosis'" [modal]="modalVaccineDosis" />
+<div class="modal fade" id="seleccion" tabindex="-1" aria-labelledby="seleccionLabel" aria-hidden="true"
+  *ngIf="vaccineSelected">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-dark">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 " id="seleccionLabel"> Vacuna: {{vaccineSelected.name}}</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-dark text-center">
+        <p>Fecha: {{vaccineSelected.fecha}}</p>
+        <p>Lote: {{vaccineSelected.lote}}</p>
+        <p>Sede: {{vaccineSelected.sede}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="qrModal" tabindex="-1" aria-labelledby="qrModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="qrModalLabel">QR para aplicar Dosis</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <ngx-qrcode [value]="modalQR">
+        </ngx-qrcode>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#qrModal" data-bs-toggle="modal" data-bs-target="#qrModal"
+          data-bs-toggle="modal" data-bs-target="#qrModal" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal"
+          (click)="updateUserCard()">Verificar Aplicación</button>
+      </div>
+    </div>
+  </div>
 </div>

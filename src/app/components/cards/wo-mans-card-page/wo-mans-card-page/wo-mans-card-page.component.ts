@@ -6,20 +6,21 @@ import { CookieService } from 'ngx-cookie-service';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { environment } from 'src/environments/environment';
 
+
 @Component({
   standalone: true,
-  selector: 'app-teens-card-page',
-  templateUrl: './teens-card-page.component.html',
-  styleUrls: ['./teens-card-page.component.css'],
+  selector: 'app-wo-mans-card-page',
+  templateUrl: './wo-mans-card-page.component.html',
+  styleUrls: ['./wo-mans-card-page.component.css'],
   imports:[
     CommonModule,
     ModalComponent,
     NgxQRCodeModule
   ]
 })
-export class TeensCardPageComponent {
+export class WoMansCardPageComponent {
   @Input() userCard?: any;
-  CART_ADL: any = {};
+  CART_MUJ: any = {};
   vaccineSelected: any;
   modalVaccineInfo: any;
   modalVaccineDosis: any;
@@ -40,9 +41,9 @@ export class TeensCardPageComponent {
     const { user } = this.userCard;
     const { cards } = user;
     if (cards) {
-      const CART_ADL = cards['CART_ADL'];
-      if (CART_ADL) {
-        this.CART_ADL = CART_ADL;
+      const CART_MUJ = cards['CART_MUJ'];
+      if (CART_MUJ) {
+        this.CART_MUJ = CART_MUJ;
       }
     }
     const token = this._cookieService.get(environment.tokenName);
@@ -62,7 +63,7 @@ export class TeensCardPageComponent {
           name: vaccineName,
         },
         cardType: {
-          nameType: 'CART_ADL',
+          nameType: 'CART_MUJ',
         },
       };
       console.log(data);

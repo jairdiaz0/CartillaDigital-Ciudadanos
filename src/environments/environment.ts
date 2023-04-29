@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   url: 'http://localhost:3000',
-  // url: 'http://192.168.237.214:3000',
+  // url: 'http://192.168.1.197:3000',
   tokenName: 'token_session'
 };
 

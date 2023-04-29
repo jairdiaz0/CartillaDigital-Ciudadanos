@@ -22,8 +22,21 @@
   --background-2: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='400' height='700' preserveAspectRatio='none' viewBox='0 0 400 700'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1120%26quot%3b)' fill='none'%3e%3crect width='400' height='700' x='0' y='0' fill='rgba(227%2c 227%2c 227%2c 1)'%3e%3c/rect%3e%3cpath d='M123.782%2c313.267C135.967%2c313.118%2c147.064%2c306.969%2c153.583%2c296.674C160.635%2c285.538%2c164.209%2c271.348%2c157.519%2c259.991C150.902%2c248.758%2c136.817%2c245.85%2c123.782%2c246.08C111.234%2c246.302%2c98.549%2c250.412%2c92.048%2c261.147C85.334%2c272.233%2c85.951%2c286.349%2c92.691%2c297.419C99.175%2c308.068%2c111.315%2c313.42%2c123.782%2c313.267' fill='rgba(141%2c 140%2c 140%2c 0.6)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M201.335%2c409.913C229.716%2c408.554%2c260.071%2c403.857%2c274.864%2c379.597C290.142%2c354.541%2c285.321%2c322.524%2c269.812%2c297.61C255.194%2c274.126%2c228.977%2c262.537%2c201.335%2c261.476C171.358%2c260.325%2c140.144%2c267.289%2c123.103%2c291.978C103.684%2c320.112%2c95.609%2c358.79%2c114.506%2c387.277C132.227%2c413.992%2c169.314%2c411.446%2c201.335%2c409.913' fill='rgba(141%2c 140%2c 140%2c 0.6)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M253.85 555.15 a131.99 131.99 0 1 0 263.98 0 a131.99 131.99 0 1 0 -263.98 0z' fill='rgba(141%2c 140%2c 140%2c 0.6)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M168.13 130.03 a77.26 77.26 0 1 0 154.52 0 a77.26 77.26 0 1 0 -154.52 0z' fill='rgba(141%2c 140%2c 140%2c 0.6)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M139.1569442888666 556.310652864512L55.97987999191321 612.4142911387572 112.08351826615839 695.5913554357106 195.2605825631118 639.4877171614654z' fill='rgba(141%2c 140%2c 140%2c 0.6)' class='triangle-float2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1120'%3e%3crect width='400' height='700' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
 }
 
-body{
-  /* background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1098%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(199%2c 199%2c 199%2c 1)'%3e%3c/rect%3e%3cpath d='M 0%2c136 C 144%2c161.4 432%2c289.4 720%2c263 C 1008%2c236.6 1296%2c55.8 1440%2c4L1440 560L0 560z' fill='rgba(142%2c 142%2c 142%2c 1)'%3e%3c/path%3e%3cpath d='M 0%2c433 C 41.2%2c413 123.6%2c323.6 206%2c333 C 288.4%2c342.4 329.6%2c465 412%2c480 C 494.4%2c495 535.6%2c403.8 618%2c408 C 700.4%2c412.2 741.6%2c505.2 824%2c501 C 906.4%2c496.8 947.6%2c385.8 1030%2c387 C 1112.4%2c388.2 1154%2c506.6 1236%2c507 C 1318%2c507.4 1399.2%2c412.6 1440%2c389L1440 560L0 560z' fill='rgba(172%2c 173%2c 173%2c 1)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1098'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e"); */
+body::before {
+  content: "";
+  background-image: var(--background-1);
   background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  z-index: -1;
+}
+body{
+  /* background-image: var(--background-1); */
+  /* background-size: cover; */
   height: 100vh;
+  /* opacity: 0.5; */
 }

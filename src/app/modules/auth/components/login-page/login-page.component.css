@@ -1,3 +1,7 @@
 p, button, a{
   font-variant: small-caps;
 }
+
+.card{
+  background-image: var(--background-2);
+}
