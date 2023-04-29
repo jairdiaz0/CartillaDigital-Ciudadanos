@@ -84,15 +84,14 @@ export class AddCardPageComponent {
     this.alert.getStatus().success.title = 'Alta de Cartilla Correcta';
     this.alert.getStatus().failure.title = 'Ocurrió un error inesperado';
   }
-  erCURP: string =
-    '[A-Za-z]{1}[AEIOUaeiou]{1}[A-Za-z]{2}[0-9]{2}(0[1-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])[HMhm]{1}(AS|BC|BS|CC|CS|CH|CL|CM|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE|ne)[B-DF-HJ-NP-TV-Z]{3}[0-9A-Za-z]{1}[0-9]{1}';
+  erCURP = new RegExp('[A-Za-z]{1}[AEIOUaeiou]{1}[A-Za-z]{2}[0-9]{2}(0[1-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])[HMhm]{1}(AS|BC|BS|CC|CS|CH|CL|CM|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE|ne)[B-DF-HJ-NP-TV-Z]{3}[0-9A-Za-z]{1}[0-9]{1}', 'i');
   ngOnInit() {
     this.formNewCard = new FormGroup({
       curp: new FormControl('', [
         Validators.required,
         Validators.minLength(18),
         Validators.maxLength(18),
-        Validators.pattern(`(${this.erCURP})|(${this.erCURP.toLowerCase()})`),
+        Validators.pattern(this.erCURP),
       ]),
       firstName: new FormControl('', [
         Validators.required,
